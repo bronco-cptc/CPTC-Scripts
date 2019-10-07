@@ -1,0 +1,41 @@
+\        /  __  |  |  
+ \  /\  / | __] |  |  
+  \/  \/   \__  |  |  
+
+\        /  __  |  |  
+ \  /\  / | __] |  |  
+  \/  \/   \__  |  |  
+  
+\        /  __  |  |  
+ \  /\  / | __] |  |  
+  \/  \/   \__  |  |  
+  
+  
+#GDrive- Getting started
+Go to the link presented at the end of the setup script to connect to gdrive
+with the command line script.
+
+To make a new directory
+```gdrive mkdir [directory-name]```
+
+
+##Sync
+To sync files [upload]
+``` gdrive sync upload [local-dir] [remote-dir-id] ```
+Example:
+``` gdrive sync upload /home/bob/stuff/ werdtfygu-ertf7g8h90j-es45dr6ft7g8 ```
+
+
+To sync files [download]
+``` gdrive sync download[remote-dir-id] [local-dir] ```
+Example:
+``` gdrive sync download werdtfygu-ertf7g8h90j-es45dr6ft7g8 /home/bob/stuff/ ```
+
+To find a drive directory ID:
+``` gdrive list -m 1000 | grep -i 'name of directory you are looking for' ```
+The -m is max.
+
+
+
+
+

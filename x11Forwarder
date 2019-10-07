@@ -1,0 +1,23 @@
+__  __  _   _   _____                                _ _
+\ \/ / / | / | |  ___|__  _ ____      ____ _ _ __ __| (_)_ __   __ _
+ \  /  | | | | | |_ / _ \| '__\ \ /\ / / _` | '__/ _` | | '_ \ / _` |
+ /  \  | | | | |  _| (_) | |   \ V  V / (_| | | | (_| | | | | | (_| |
+/_/\_\ |_| |_| |_|  \___/|_|    \_/\_/ \__,_|_|  \__,_|_|_| |_|\__, |
+                                                               |___/
+                             For MacOS
+                             
+1. Get Homebrew for mac, it is a package manager that can help us get other tools we may need as well
+``` /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" ```
+
+2. Get xQuartz, the X server for mac. (desktop environments like LXDE or XFCE use the X libraries to draw the GUI elements)
+``` brew cask install xquartz ```
+
+3. Connect to the remote kali with X11 forwarding (enabled /etc/ssh/sshd_config has X11 enabled)
+``` ssh -X root@[remoteHost] ```
+
+4. Execute any application followed by '&' in order to start it an an X window on your localhost
+example:
+``` firefox & ```
+
+5. It is possible to start the entire desktop and have it forwarded (like vnc) but copy and paste may be impacted.
+    This isn't documented because it depends on what display manager is used and what desktop environment (assuming any)
