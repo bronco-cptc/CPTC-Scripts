@@ -15,15 +15,6 @@ echo '[+] UPDATING PACKAGE LIST'
 apt update
 
 echo ''
-echo '[+] INSTALLING DOCKER'
-apt-get install -y docker-ce docker-ce-cli containerd.io
-
-echo ''
-echo '[+] STARTING OPENVAS CONTAINER'
-docker run -d -p 443:443 -e OV_UPDATE=yes --name openvas atomicorp/openvas
-
-
-echo ''
 echo '[+] CLONING RECONNOITRE'
 git clone https://github.com/codingo/Reconnoitre.git
 
