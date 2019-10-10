@@ -14,17 +14,6 @@ echo''
 echo '[+] UPDATING PACKAGE LIST'
 apt update
 
-
-echo ''
-echo '[+] INSTALLING CRACKMAPEXEC'
-apt-get install -y libssl-dev libffi-dev python-dev build-essential
-pip install env
-git clone --recursive https://github.com/byt3bl33d3r/CrackMapExec
-cd CrackMapExec && pipenv install
-pipenv shell
-python setup.py install
-exit
-
 cd $current_dir
 
 echo ''
