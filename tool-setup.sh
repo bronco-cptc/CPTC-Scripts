@@ -9,6 +9,22 @@ mkdir privesc
 # No more prompts so the script will just run
 export DEBIAN_FRONTEND=noninteractive
 
+
+cat <<EOT >> /root/.bashrc
+glist () {
+    gdrive list -m 1000 | grep -i $1
+}
+
+gup () {
+    gdrive sync upload $1 $(gdrive list -m 1000 | grep -i $2 | awk '{print $1}')
+}
+
+gdown () {
+    gdrive sync download $(gdrive list -m 1000 | grep -i $1 | awk '{print $1}') $2
+}
+EOT
+
+
 # Doing this first so that there is time for docker container to update network vulnerabilties while script runs
 echo''
 echo '[+] UPDATING PACKAGE LIST'
