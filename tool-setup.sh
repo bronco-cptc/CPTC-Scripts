@@ -1,7 +1,8 @@
 #!/bin/bash
 
-chmod u+x ./gdriveTreeGen.sh
-
+# Create local structure 
+mkdir /root/Reconnoitre /root/EyeWitness /root/Artifacts /root/Cracked /root/Uncracked
+cd /root
 current_dir=`pwd`
 
 mkdir privesc
