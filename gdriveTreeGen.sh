@@ -28,5 +28,4 @@ for i in "${names[@]}"; do
 done
 done
 
-# Create local structure 
-mkdir /root/Reconnoitre /root/EyeWitness /root/Artifacts /root/Cracked /root/Uncracked
+
