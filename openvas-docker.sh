@@ -9,6 +9,8 @@ apt-get update
 
 sudo apt-get install -y docker docker-ce docker-ce-cli containerd.io
 
+systemctl start docker
+
 echo ''
 echo '[+] STARTING OPENVAS CONTAINER'
 docker run -d -p 443:443 -e OV_UPDATE=yes --name openvas atomicorp/openvas
