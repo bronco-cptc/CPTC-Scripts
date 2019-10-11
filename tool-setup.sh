@@ -80,13 +80,14 @@ echo '[+] GETTING WINDOWS-EXPLOIT-SUGGESTER'
 wget https://raw.githubusercontent.com/GDSSecurity/Windows-Exploit-Suggester/master/windows-exploit-suggester.py
 
 
+echo ''
+echo '[+] GETTING WORDLISTS'
 mkdir /usr/share/seclists/
 mkdir /usr/share/seclists/Discovery/
 mkdir /usr/share/seclists/Discovery/Web-Content/
 
-cd ..
+cd $current_dir
 cp ./wordlists/CGIs.txt ./wordlists/common.txt /usr/share/seclists/Discovery/Web-Content/
-
 
 echo ''
 echo '[+] GETTING WINDOWS-EXPLOIT-SUGGESTER'
