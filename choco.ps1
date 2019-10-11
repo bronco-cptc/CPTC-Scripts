@@ -17,3 +17,4 @@ choco install nmap -fy
 choco install sublimetext3 -fy
 choco install greenshot -fy
 choco install git.install -fy
+choco install burp-suite-free-edition -fy
