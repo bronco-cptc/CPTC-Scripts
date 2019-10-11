@@ -11,8 +11,7 @@ mkdir privesc
 export DEBIAN_FRONTEND=noninteractive
 
 
-cat <<EOT >> /root/.bashrc
-glist () {
+echo 'glist () {
     gdrive list -m 1000 | grep -i $1
 }
 
@@ -22,8 +21,8 @@ gup () {
 
 gdown () {
     gdrive sync download $(gdrive list -m 1000 | grep -i $1 | awk '{print $1}') $2
-}
-EOT
+}' >> /root/.bashrc
+
 
 
 # Doing this first so that there is time for docker container to update network vulnerabilties while script runs
