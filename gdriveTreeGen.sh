@@ -16,7 +16,7 @@ names=(
 	Silas
 )
 list=(
-	Reconnoitre
+	Scans
 	EyeWitness
 	Artifacts
 	Cracked
