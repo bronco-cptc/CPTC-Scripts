@@ -18,7 +18,7 @@ names=(
 list=(
 	Scans
 	EyeWitness
-	Artifacts
+	Notes
 	Cracked
 	Uncracked
 )
