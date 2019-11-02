@@ -106,6 +106,8 @@ echo '[+] DOWNLOAD AND SETUP GDRIVE BINARY'
 wget -O /usr/bin/gdrive https://github.com/gdrive-org/gdrive/releases/download/2.1.0/gdrive-linux-x64
 chmod u+x /usr/bin/gdrive
 
+source ~/.bashrc
+
 gdrive about
 
 
