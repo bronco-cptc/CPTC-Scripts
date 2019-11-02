@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Create local structure 
-mkdir /root/Scans /root/EyeWitness /root/Notes /root/Cracked /root/Uncracked
+mkdir /root/cptc
 cd /root
 current_dir=`pwd`
 
