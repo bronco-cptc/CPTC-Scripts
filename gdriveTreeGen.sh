@@ -16,11 +16,7 @@ names=(
 	Silas
 )
 list=(
-	Scans
-	EyeWitness
-	Notes
-	Cracked
-	Uncracked
+	cptc
 )
 for i in "${names[@]}"; do
 	for x in "${list[@]}"; do
