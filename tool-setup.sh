@@ -11,18 +11,17 @@ mkdir privesc
 export DEBIAN_FRONTEND=noninteractive
 
 
-echo 'glist () {
-    gdrive list -m 1000 | grep -i $1
-}
-
-gup () {
-    gdrive sync upload $1 $(gdrive list -m 1000 | grep -i $2 | awk '{print $1}')
-}
-
-gdown () {
-    gdrive sync download $(gdrive list -m 1000 | grep -i $1 | awk '{print $1}') $2
-}' >> /root/.bashrc
-
+echo -e "glist () {" >> ~/.bashrc
+echo -e "    gdrive list -m 1000 | grep -i \$1" >> ~/.bashrc
+echo -e "}" >> ~/.bashrc
+echo -e "" >> ~/.bashrc
+echo -e "gup () {" >> ~/.bashrc
+echo -e "    gdrive sync upload \$1 \$(gdrive list -m 1000 | grep -i \$2 | awk '{print \$1}')" >> ~/.bashrc
+echo -e "}" >> ~/.bashrc
+echo -e "" >> ~/.bashrc
+echo -e "gdown () {" >> ~/.bashrc
+echo -e "    gdrive sync download \$(gdrive list -m 1000 | grep -i \$1 | awk '{print \$1}') \$2" >> ~/.bashrc
+echo -e "}" >> ~/.bashrc
 
 
 # Doing this first so that there is time for docker container to update network vulnerabilties while script runs
