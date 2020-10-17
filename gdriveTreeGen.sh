@@ -24,4 +24,3 @@ for i in "${names[@]}"; do
 done
 done
 
-

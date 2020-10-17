@@ -1,0 +1,22 @@
+#!/bin/bash
+cd /
+apt-get install vsftpd -y
+apt-get install python3-pip -y
+apt-get install docker-compose -y
+pip3 install pymongo
+mv /etc/vsftpd.conf /etc/vsftpdbackup.conf
+cp /nVis/vsftpd.conf /etc
+mkdir /var/ftp
+mkdir /var/ftp/pub
+chown ftp:ftp /var/ftp/pub
+chmod 777 /var/ftp/pub
+systemctl stop vsftpd
+systemctl start vsftpd
+ufw disable
+while true
+do
+python3 /nVis/nmaptomongo.py -F /var/ftp/pub
+sleep 60
+done
+
+

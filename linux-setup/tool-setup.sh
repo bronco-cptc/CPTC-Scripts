@@ -101,13 +101,11 @@ echo ''
 echo '[+} INSTALLING TMUX'
 
 echo ''
-echo '[+] DOWNLOADING WORDLISTS'
-wget -c https://raw.githubusercontent.com/daviddias/node-dirbuster/master/lists/directory-list-lowercase-2.3-small.txt
-wget -c https://raw.githubusercontent.com/daviddias/node-dirbuster/master/lists/directory-list-lowercase-2.3-medium.txt
-wget -c https://raw.githubusercontent.com/daviddias/node-dirbuster/master/lists/directory-list-lowercase-2.3-big.txt
+echo '[+] DOWNLOAD AND SETUP GDRIVE BINARY'
+wget -O /usr/bin/gdrive https://github.com/gdrive-org/gdrive/releases/download/2.1.0/gdrive-linux-x64
+chmod u+x /usr/bin/gdrive
 
 source ~/.bashrc
 
-
-
+gdrive about
 
