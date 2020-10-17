@@ -18,4 +18,4 @@ choco install sublimetext3 -fy
 choco install greenshot -fy
 choco install git.install -fy
 choco install burp-suite-free-edition -fy
-choco install postman
+choco install postman -fy
