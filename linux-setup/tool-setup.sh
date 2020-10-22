@@ -71,10 +71,12 @@ wget -c https://raw.githubusercontent.com/AonCyberLabs/Windows-Exploit-Suggester
 
 #install tmux
 echo ''
-echo '[+} INSTALLING TMUX'
+echo '[+] INSTALLING TMUX'
 apt install tmux
 
 source ~/.bashrc
 
-
-
+#install vim
+echo ''
+echo '[+] INSTALLING VIM'
+apt install vim -y
