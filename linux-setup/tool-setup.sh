@@ -11,41 +11,12 @@ mkdir privesc
 export DEBIAN_FRONTEND=noninteractive
 
 
-echo -e "glist () {" >> ~/.bashrc
-echo -e "    gdrive list -m 1000 | grep -i \$1" >> ~/.bashrc
-echo -e "}" >> ~/.bashrc
-echo -e "" >> ~/.bashrc
-echo -e "gup () {" >> ~/.bashrc
-echo -e "    gdrive sync upload \$1 \$(gdrive list -m 1000 | grep -i \$2 | awk '{print \$1}')" >> ~/.bashrc
-echo -e "}" >> ~/.bashrc
-echo -e "" >> ~/.bashrc
-echo -e "gdown () {" >> ~/.bashrc
-echo -e "    gdrive sync download \$(gdrive list -m 1000 | grep -i \$1 | awk '{print \$1}') \$2" >> ~/.bashrc
-echo -e "}" >> ~/.bashrc
-
-
 # Doing this first so that there is time for docker container to update network vulnerabilties while script runs
 echo''
 echo '[+] UPDATING PACKAGE LIST'
 apt update
 
 cd $current_dir
-
-echo ''
-echo '[+] CLONING RECONNOITRE'
-git clone https://github.com/codingo/Reconnoitre.git
-
-echo ''
-echo '[+] INSTALLING RECONNOITRE'
-curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-python3 get-pip.py
-cd Reconnoitre
-python3 setup.py install
-
-cd $current_dir
-
-rm get-pip.py
-
 
 echo''
 echo '[+] CLONING EYEWITNESS'
@@ -59,7 +30,7 @@ cd $current_dir
 
 echo ''
 echo '[+] ADDING IMPACKET ALIAS'
-echo "alias impacket='cd /usr/share/doc/python-impacket/examples'" >> ~/.bashrc
+git clone https://github.com/SecureAuthCorp/impacket.git
 . ~/.bashrc
 
 
@@ -85,27 +56,25 @@ mkdir /usr/share/seclists/Discovery/
 mkdir /usr/share/seclists/Discovery/Web-Content/
 
 cd $current_dir
+
 cp ./wordlists/CGIs.txt ./wordlists/common.txt /usr/share/seclists/Discovery/Web-Content/
 
 echo ''
 echo '[+] GETTING WINDOWS-EXPLOIT-SUGGESTER'
 # Ensure X11 enabled
 sed -i 's/#X11Forwarding.*/X11Forwarding yes/' /etc/ssh/sshd_config 
+systemctl restart ssh
 
 echo ''
 echo '[+] GETTING WINDOWS-EXPLOIT-SUGGESTER'
-systemctl restart ssh
+wget -c https://raw.githubusercontent.com/AonCyberLabs/Windows-Exploit-Suggester/master/windows-exploit-suggester.py
 
 #install tmux
 echo ''
 echo '[+} INSTALLING TMUX'
-
-echo ''
-echo '[+] DOWNLOAD AND SETUP GDRIVE BINARY'
-wget -O /usr/bin/gdrive https://github.com/gdrive-org/gdrive/releases/download/2.1.0/gdrive-linux-x64
-chmod u+x /usr/bin/gdrive
+apt install tmux
 
 source ~/.bashrc
 
-gdrive about
+
 
