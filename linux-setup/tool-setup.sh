@@ -64,10 +64,7 @@ echo ''
 echo '[+] INSTALLING TMUX'
 apt install tmux -y
 
-#install vim
-echo ''
-echo '[+] INSTALLING VIM'
-apt install vim -y
+cd ~
 
 echo "##Quality of life stuff
 set -g history-limit 10000
@@ -80,5 +77,10 @@ run-shell /opt/tmux-logging/logging.tmux" >> .tmux.conf
 git clone https://github.com/tmux-plugins/tmux-logging /opt/tmux-logging/
 
 tmux source-file ~/.tmux.conf
+
+#install vim
+echo ''
+echo '[+] INSTALLING VIM'
+apt install vim -y
 
 source ~/.bashrc
