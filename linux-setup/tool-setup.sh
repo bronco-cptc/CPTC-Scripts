@@ -61,6 +61,7 @@ wget -c https://raw.githubusercontent.com/AonCyberLabs/Windows-Exploit-Suggester
 #install tmux
 echo ''
 echo '[+] INSTALLING TMUX'
+cd $current_dir
 apt install tmux -y
 
 echo "##Quality of life stuff
