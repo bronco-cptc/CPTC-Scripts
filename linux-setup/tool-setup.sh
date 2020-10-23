@@ -29,10 +29,8 @@ cd EyeWitness/setup
 cd $current_dir
 
 echo ''
-echo '[+] ADDING IMPACKET ALIAS'
+echo '[+] INSTALLING IMPACKET ALIAS'
 git clone https://github.com/SecureAuthCorp/impacket.git
-. ~/.bashrc
-
 
 echo ''
 echo '[+] INSTALLING GOBUSTER'
@@ -51,16 +49,8 @@ wget https://raw.githubusercontent.com/GDSSecurity/Windows-Exploit-Suggester/mas
 
 echo ''
 echo '[+] GETTING WORDLISTS'
-mkdir /usr/share/seclists/
-mkdir /usr/share/seclists/Discovery/
-mkdir /usr/share/seclists/Discovery/Web-Content/
+git clone https://github.com/danielmiessler/SecLists.git
 
-cd $current_dir
-
-cp ./wordlists/CGIs.txt ./wordlists/common.txt /usr/share/seclists/Discovery/Web-Content/
-
-echo ''
-echo '[+] GETTING WINDOWS-EXPLOIT-SUGGESTER'
 # Ensure X11 enabled
 sed -i 's/#X11Forwarding.*/X11Forwarding yes/' /etc/ssh/sshd_config 
 systemctl restart ssh
@@ -72,11 +62,11 @@ wget -c https://raw.githubusercontent.com/AonCyberLabs/Windows-Exploit-Suggester
 #install tmux
 echo ''
 echo '[+] INSTALLING TMUX'
-apt install tmux
-
-source ~/.bashrc
+apt install tmux -y
 
 #install vim
 echo ''
 echo '[+] INSTALLING VIM'
 apt install vim -y
+
+source ~/.bashrc
