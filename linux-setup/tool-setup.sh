@@ -74,7 +74,7 @@ set-window-option -g mode-keys vi
 #Logging
 run-shell /opt/tmux-logging/logging.tmux" >> .tmux.conf
 
-git clone https://github.com/tmux-plugins/tmux-logging ~/opt/tmux-logging/
+git clone https://github.com/tmux-plugins/tmux-logging /opt/tmux-logging/
 
 tmux source-file ~/.tmux.conf
 
