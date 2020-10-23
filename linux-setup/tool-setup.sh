@@ -1,8 +1,7 @@
 #!/bin/bash
 
 # Create local structure 
-mkdir /root/cptc
-cd /root
+cd ~
 current_dir=`pwd`
 
 mkdir privesc
@@ -63,6 +62,20 @@ wget -c https://raw.githubusercontent.com/AonCyberLabs/Windows-Exploit-Suggester
 echo ''
 echo '[+] INSTALLING TMUX'
 apt install tmux -y
+
+echo "##Quality of life stuff
+set -g history-limit 10000
+set -g allow-rename off
+
+##Search Mode VI (default is emac)
+set-window-option -g mode-keys vi
+
+#Logging
+run-shell /opt/tmux-logging/logging.tmux" >> .tmux.conf
+
+git clone https://github.com/tmux-plugins/tmux-logging ~/opt/tmux-logging/
+
+tmux source-file ~/.tmux.conf
 
 #install vim
 echo ''
