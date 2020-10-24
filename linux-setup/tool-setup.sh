@@ -23,11 +23,6 @@ echo '[+] FETCHING GOWITNESS'
 wget https://github.com/sensepost/gowitness/releases/download/2.1.2/gowitness-2.1.2-linux-amd64
 
 echo ''
-echo '[+] FETCHING CRACKMAPEXEC'
-wget https://github.com/byt3bl33d3r/CrackMapExec/releases/download/v5.1.1dev/cme-ubuntu-latest.4.zip
-unzip cme-ubuntu-latest.4.zip
-
-echo ''
 echo '[+] FETCHING IMPACKET'
 git clone https://github.com/SecureAuthCorp/impacket.git
 
@@ -35,7 +30,9 @@ echo ''
 echo '[+] INSTALLING GOBUSTER'
 apt-get install gobuster -y
 
-cd $current_dir/privesc
+echo ''
+echo '[+] GETTING SECLISTS'
+git clone https://github.com/danielmiessler/SecLists.git
 
 echo ''
 echo '[+] GETTING LINUXPRIVCHECKER.PY'
