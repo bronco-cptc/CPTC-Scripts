@@ -19,17 +19,16 @@ apt update
 cd $current_dir
 
 echo''
-echo '[+] CLONING EYEWITNESS'
-git clone https://github.com/FortyNorthSecurity/EyeWitness
-
-echo '[+] INSTALLING EYEWITNESS'
-cd EyeWitness/setup
-./setup.sh
-
-cd $current_dir
+echo '[+] FETCHING GOWITNESS'
+wget https://github.com/sensepost/gowitness/releases/download/2.1.2/gowitness-2.1.2-linux-amd64
 
 echo ''
-echo '[+] INSTALLING IMPACKET ALIAS'
+echo '[+] FETCHING CRACKMAPEXEC'
+wget https://github.com/byt3bl33d3r/CrackMapExec/releases/download/v5.1.1dev/cme-ubuntu-latest.4.zip
+unzip cme-ubuntu-latest.4.zip
+
+echo ''
+echo '[+] FETCHING IMPACKET'
 git clone https://github.com/SecureAuthCorp/impacket.git
 
 echo ''
@@ -45,11 +44,6 @@ wget https://raw.githubusercontent.com/sleventyeleven/linuxprivchecker/master/li
 echo ''
 echo '[+] GETTING WINDOWS-EXPLOIT-SUGGESTER'
 wget https://raw.githubusercontent.com/GDSSecurity/Windows-Exploit-Suggester/master/windows-exploit-suggester.py
-
-
-echo ''
-echo '[+] GETTING WORDLISTS'
-git clone https://github.com/danielmiessler/SecLists.git
 
 # Ensure X11 enabled
 sed -i 's/#X11Forwarding.*/X11Forwarding yes/' /etc/ssh/sshd_config 

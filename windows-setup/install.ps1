@@ -23,6 +23,8 @@ function Main {
 	MiscSetup
 cinst common.fireeye
 cinst .\packages.config
+certutil -urlcache -f https://github.com/byt3bl33d3r/CrackMapExec/releases/download/v5.1.1dev/cme-windows-latest.1.zip cme-windows.zip
+certutil -urlcache -f https://github.com/byt3bl33d3r/CrackMapExec/releases/download/v5.1.1dev/cme-ubuntu-latest.4.zip cme-ubuntu.zip
 }
 
 Main
